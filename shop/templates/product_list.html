@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Page</title>
+</head>
+<body>
+  {%for product in products%}
+  <div style="width: 300px; margin: 0 auto; margin-bottom: 20px; text-align: center; border: 2px solid red; background-color: aqua">
+      <p>{{product}}</p>
+      <p><a href="{% url 'customer:product_detail' product.pk %}">Checkout product</a></p>
+  </div>
+  {%endfor%}
+</body>
+</html>

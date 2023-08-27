@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+</head>
+<body>
+    <h2>{{ product.name }}</h2>
+    <p>Category: {{ product.category }}</p>
+    <p>Price: ${{ product.price }}</p>
+    {% if not product.purchase_status %}
+    <a href="{% url 'customer:purchase_product' product.pk %}">Buy product</a>
+    {% endif %}
+</body>
+</html>

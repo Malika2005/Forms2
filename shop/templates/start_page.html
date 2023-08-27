@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Page</title>
+</head>
+<body>
+  <a href="{% url 'owner:add_product' %}">Add product</a>
+  {% for product in products %}
+  <div style="width: 300px; margin: 0 auto; margin-bottom: 20px; text-align: center; border: 2px solid red; background-color: aqua">
+      <h2>{{ product.name }}</h2>
+      <p>Category: {{ product.category }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <a href="{% url 'owner:delete_product' product.pk %}">Delete product</a>
+      <a href="{% url 'owner:edit_product' product.pk %}">Edit product</a>
+  </div>
+  {% endfor %}
+</body>
+</html>
